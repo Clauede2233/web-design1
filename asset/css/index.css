@@ -1,0 +1,143 @@
+html, body, * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/01.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.note-input {
+    width: calc(100% - 20px);
+    min-height: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e4c9c9;
+    border-radius: 20px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.save-btn, .history-btn {
+    width: 200px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.save-btn {
+    background-color: #fd7d6d;
+}
+
+.save-btn:hover {
+    background-color: #ff6b5b;
+}
+
+.history-btn {
+    background-color: #6d7dfd;
+}
+
+.history-btn:hover {
+    background-color: #5b6bff;
+}
+
+.saved-notes {
+    margin-top: 20px;
+}
+
+.note-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px 50px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
